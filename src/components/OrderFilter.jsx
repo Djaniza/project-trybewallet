@@ -11,10 +11,10 @@ function OrderFilter() {
     'population', 'orbital_period', 'diameter', 'rotation_period', 'surface_water'];
   return (
     <form>
-      <label htmlFor="column-sort" className="order">
+      <label htmlFor="column-sort" className="filters">
         Order column:
         <select
-          className="select-order"
+          className="filters"
           data-testid="column-sort"
           id="column-sort"
           value={ coluna }
@@ -22,26 +22,28 @@ function OrderFilter() {
           onChange={ ({ target: { value } }) => setColuna(value) }
         >
           {options.map((opt) => (
-            <option key={ opt } value={ opt }>{opt}</option>
+            <option key={ opt } value={ opt } className="filters">{opt}</option>
           ))}
         </select>
       </label>
-      <label htmlFor="asc" name="order" className="check-order">
-        Ascendente
+      <label htmlFor="asc" name="order" className="filters">
+        Crescente
         <input
           id="asc"
           type="checkbox"
+          className="filters"
           value="ASC"
           name="order"
           data-testid="column-sort-input-asc"
           onChange={ ({ target: { value } }) => setOrganize(value) }
         />
       </label>
-      <label htmlFor="desc" name="order" className="check-order">
-        Descendente
+      <label htmlFor="desc" name="order" className="filters">
+        Decrescente
         <input
           id="desc"
           type="checkbox"
+          className="filters"
           value="DESC"
           name="order"
           data-testid="column-sort-input-desc"
@@ -58,7 +60,7 @@ function OrderFilter() {
           });
         } }
       >
-        Order
+        Ordenar
       </button>
     </form>
   );

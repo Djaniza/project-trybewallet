@@ -70,7 +70,7 @@ function NumberFilter() {
         onClick={ handleClick }
       >
         <span className="material-icons-outlined">
-          filter_alt
+          Filtrar
         </span>
       </button>
     </form>
